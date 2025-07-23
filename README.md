@@ -6,7 +6,7 @@ This project provides a dynamic **restaurant planning interface** built in **Ang
 
 
 
-````markdown
+
 ### 1. Clone the repository
 
 #### Using HTTPS:
@@ -45,7 +45,7 @@ Navigate to: [http://localhost:4200](http://localhost:4200)
 
 ## 📦 Technologies Used
 
-* **Angular 17+** with **Standalone Components**
+* **Angular 18+** with **Standalone Components**
 * **Syncfusion Scheduler** (`@syncfusion/ej2-angular-schedule`)[Demo](https://ej2.syncfusion.com/angular/demos/?_gl=1*1bin2th*_ga*MzQ5MTgxMzE3LjE3NTMyNzkxMzI.*_ga_41J4HFMX1J*czE3NTMyNzkxMzEkbzEkZzEkdDE3NTMyNzkyOTUkajYwJGwwJGgw#/bootstrap5/schedule/adaptive-rows)
 * **Bootstrap 5** (for responsive layout)
 * **SCSS** (modular component styling)
