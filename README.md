@@ -4,16 +4,26 @@
 
 This project provides a dynamic **restaurant planning interface** built in **Angular standalone** with **Syncfusion Scheduler**, allowing users to manage tables and create time-slot-based reservations visually.
 
----
 
-## 🚀 Getting Started
 
+````markdown
 ### 1. Clone the repository
 
+#### Using HTTPS:
 ```bash
-git clone <your-repo-url>
-cd <your-project-folder>
+git clone https://github.com/RajnishKumar07/restaurant-planner.git
+cd restaurant-planner
+````
+
+#### OR using SSH (if configured):
+
+```bash
+git clone git@github.com:RajnishKumar07/restaurant-planner.git
+cd restaurant-planner
 ```
+
+
+
 
 ### 2. Install dependencies with legacy peer support
 
