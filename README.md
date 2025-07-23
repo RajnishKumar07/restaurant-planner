@@ -1,27 +1,65 @@
-# RestaurantPlanner
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+This project provides a dynamic **restaurant planning interface** built in **Angular standalone** with **Syncfusion Scheduler**, allowing users to manage tables and create time-slot-based reservations visually.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🚀 Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 1. Clone the repository
 
-## Running unit tests
+```bash
+git clone <your-repo-url>
+cd <your-project-folder>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 2. Install dependencies with legacy peer support
 
-## Running end-to-end tests
+```bash
+npm install --legacy-peer-deps
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 3. Start the development server
 
-## Further help
+```bash
+npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 4. Open the app in your browser
+
+Navigate to: [http://localhost:4200](http://localhost:4200)
+
+---
+
+## 📦 Technologies Used
+
+* **Angular 17+** with **Standalone Components**
+* **Syncfusion Scheduler** (`@syncfusion/ej2-angular-schedule`)[Demo](https://ej2.syncfusion.com/angular/demos/?_gl=1*1bin2th*_ga*MzQ5MTgxMzE3LjE3NTMyNzkxMzI.*_ga_41J4HFMX1J*czE3NTMyNzkxMzEkbzEkZzEkdDE3NTMyNzkyOTUkajYwJGwwJGgw#/bootstrap5/schedule/adaptive-rows)
+* **Bootstrap 5** (for responsive layout)
+* **SCSS** (modular component styling)
+* **Signal-based State Management** (`@angular/core`)
+* **Toastr** (`ngx-toastr`) for user notifications
+
+---
+
+## 🧠 Key Decisions & Assumptions
+
+* The **TimelineDay** view is used to show reservations per table.
+* Tables are defined as **resources** and grouped visually.
+* Reservations are dynamically assigned to the most suitable table based on:
+
+  * Availability (no time overlap)
+  * Sufficient capacity (nearest fit)
+* Data is managed using `signal` and `computed()` via `PlannerService`.
+* Table and reservation creation use **modal dialogs**.
+* Start/End times are stored as **ISO strings** and transformed to `Date` objects for Syncfusion rendering.
+* Scheduler integration guided with help from ChatGPT.
+* Stylesheet from Syncfusion is loaded via CDN:
+
+  ```html
+  <link href="https://cdn.syncfusion.com/ej2/30.1.37/tailwind3.css" rel="stylesheet" />
+  ```
+
+
