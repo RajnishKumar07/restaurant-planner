@@ -1,1 +1,74 @@
-<p>reservation works!</p>
+<div
+  class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+>
+  <div class="modal-content">
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+      <div class="modal-header">
+        <h5 class="modal-title">Create New Reservation</h5>
+        <button type="button" class="btn-close" (click)="close()"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="required form-label">Guest Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter guest name"
+            formControlName="customerName"
+          />
+          @if (isSubmitted() &&
+          getControl('customerName')?.errors?.['required']) {
+          <div class="text-danger">Guest Name is required</div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="required form-label">Number of Persons</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter number of persons"
+            formControlName="numberOfPerson"
+          />
+          @if (isSubmitted() &&
+          getControl('numberOfPerson')?.errors?.['required']) {
+          <div class="text-danger">Number of Persons is required</div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="required form-label">Time Slot</label>
+          <div class="d-flex flex-wrap gap-2">
+            <button
+              type="button"
+              class="btn"
+              [ngClass]="{
+                'btn-dark': selectedTime() === hour,
+                'btn-outline-secondary': selectedTime() !== hour
+              }"
+              *ngFor="let hour of hours"
+              (click)="onSelectTime(hour)"
+            >
+              {{ hour }}
+            </button>
+          </div>
+          @if (isSubmitted() && getControl('startTime')?.errors?.['required']) {
+          <div class="text-danger">Start time is required</div>
+          }
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="close()"
+        >
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-dark">Create Reservation</button>
+      </div>
+    </form>
+  </div>
+</div>
